@@ -1,6 +1,11 @@
 DOCKER HUB
 Create organization --> repos
-
+IMAGES 
+Tomcat --> build image
+nginx --> build image
+mysql --> build image
+memcached --> from dockerhub
+rabbitmq --> from dockerhub
 
 
 
