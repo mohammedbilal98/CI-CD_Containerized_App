@@ -1,5 +1,6 @@
 DOCKER HUB
-Create organization --> repos
+Create organization --> create repos
+
 IMAGES 
 Tomcat --> build image
 nginx --> build image
