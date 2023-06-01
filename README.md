@@ -19,6 +19,7 @@ rabbitmq --> from dockerhub
    
    BUILD IMAGES
     --> images name same as repos created on docker hub
+   
    DOCKER-COMPOSE
    create docker compose file to run docker containers
    
