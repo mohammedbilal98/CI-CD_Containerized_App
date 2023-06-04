@@ -1,1 +1,9 @@
+FROM mysql:8.0.33
 
+#necessary for sql
+ENV MYSQL_ROOT_PASSWORD="vprodbpass"
+#not necessary as per docs
+ENV MYSQL_DATABASE="accounts"
+
+#as per doc we have to put our sql file in this
+ADD db_backup.sql docker-entrypoint-initdb.d/db_backup.sql
