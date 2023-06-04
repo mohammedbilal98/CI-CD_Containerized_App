@@ -1,0 +1,39 @@
+version : '3'
+services: 
+ vprodb:    #name same as in application.properties file
+  image: d0ckerproject/vprofiledb:V1
+  ports:
+   - "3306:3306"
+  volumes:
+    - vprodbdata:/var/lib/mysql
+    #to local machine: from container volume (can be fetched by cmd docker inspect imagename)
+  environment:
+   - MYSQL_ROOT_PASSWORD=vprodbpass  #password same as imagesfile and app prop file
+
+ vprocache01:
+  image: memcached  #from dockerhub
+  ports:
+   - "11211:11211"
+
+ vpromq01:
+   image: rabbitmq
+   ports:
+    - "15672:15672"
+   environment:
+    - RABBITMQ_DEFAULT_USER=guest
+    - RABBITMQ_DEFAULT_PASS=guest #from app.prop file
+
+ vproapp:
+   image: d0ckerproject/vprofileapp:V1
+   ports: 
+    - "8080:8080"
+   volumes:
+    - vproappdata:/usr/local/tomcat/webapps
+
+ vproweb:
+   image: d0ckerproject/vprofileweb:V1
+   ports:
+    - "80:80"
+volumes:
+ vprodbdata: {}
+ vproappdata: {}
