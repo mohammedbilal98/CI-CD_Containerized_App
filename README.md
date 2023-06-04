@@ -1,3 +1,6 @@
+Install docker engine
+add user to docker group
+
 DOCKER HUB
 Create organization --> create repos
 
@@ -23,5 +26,8 @@ rabbitmq --> from dockerhub
    
    DOCKER-COMPOSE
    create docker compose file to run docker containers
+   
+   Login to dockerhub
+   Upload repos
    
    
