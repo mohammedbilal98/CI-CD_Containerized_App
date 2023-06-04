@@ -1,1 +1,10 @@
+FROM nginx
+LABEL "Project"="Vprofile"
+LABEL "Author"="Bilal"
+
+#we need to change configuration file so remove the default one and add file as per required changes
+RUN rm -rf /etc/nginx/conf.d/default.conf
+
+#add required changes file
+COPY nginvproapp.conf /etc/nginx/conf.d/vproapp.conf
 
