@@ -16,6 +16,6 @@ to link quality gate with jenkins >>> go to project >> project settings >>qualit
 
 
 
-for CI Docker  >>  create registry put credentials in jenkins
+for CI Docker  >>  create registry for image   create IAM user and save credentials in jenkins
 plugin: ecr, docker pipeline, aws sdk:all, cloudbees docker build and publish
 
