@@ -4,3 +4,10 @@ build timestamp
 pipeline maven integration
 pipline utility steps
 Git
+
+
+
+Integrate sonar with Jenkins
+go to Global tool config  >>> add sonarqube scanner with same name as in pipeline code >>> go to configure system >> check mark on env variables  >> give a name and enter IP url >>> get the token from sonar
+>>> click on add credentials  >> select secret text from drop down
+Token from sonar for jenkins >>go to my account in sonar >> security>>
