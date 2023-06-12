@@ -13,3 +13,9 @@ go to Global tool config  >>> add sonarqube scanner with same name as in pipelin
 Token from sonar for jenkins >>go to my account in sonar >> security>>
 
 to link quality gate with jenkins >>> go to project >> project settings >>quality gates >>webhooks >> webhook URl http://jenkinsurl:8080/sonarqube-webhook
+
+
+
+for CI Docker  >>  create registry put credentials in jenkins
+plugin: ecr, docker pipeline, aws sdk:all, cloudbees docker build and publish
+
