@@ -1,13 +1,13 @@
 pipeline {
     agent any
     tools {
-	    maven "MAVEN3"
+	    maven "MAVEN3"    (add tools name same into jenkins tool config)
 	    jdk "OracleJDK8"
 	}
 
     environment {
         registryCredential = 'ecr:us-east-1:awscreds'
-        appRegistry = "911460753344.dkr.ecr.us-east-1.amazonaws.com/vprofileappimage"
+        appRegistry = "911460753344.dkr.ecr.us-east-1.amazonaws.com/vprofileappimage"   (911460753344.dkr.ecr.us-east-1.amazonaws.com/"img name given in repo")
         vprofileRegistry = "https://911460753344.dkr.ecr.us-east-1.amazonaws.com"
         cluster = "vprofileapp"
         service = "vprofileappsvc"
