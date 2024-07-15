@@ -1,13 +1,13 @@
-#fetch tomcat 
-FROM tomcat:8-jre11
-#remove any type of application
-RUN rm -rf /usr/local/tomcat/webapps/*
-#copy the artifact
-COPY target/vprofile-v2.war /usr/local/tomcat/webapps/ROOT.war
-EXPOSE 8080
-#command to run tomcat 
-CMD ["catalina.sh", "run"]
-WORKDIR /usr/local/tomcat/
-VOLUME /usr/local/tomcat/webapps
+FROM openjdk:11 AS BUILD_IMAGE
+RUN apt update && apt install maven -y
+RUN git clone https://github.com/mohammedbilal98/CI-CD_Containerized_App.git
+RUN cd CI-CD_Containerized_App && git checkout Docker && mvn install
 
-THis line needs to be deleted
+FROM tomcat:8-jre11
+
+RUN rm -rf /usr/local/tomcat/webapps/*
+
+COPY --from=BUILD_IMAGE CI-CD_Containerized_App/target/vprofile-v2.war /usr/local/tomcat/webapps/ROOT.war
+
+EXPOSE 8080
+CMD ["catalina.sh", "run"]
