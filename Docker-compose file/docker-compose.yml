@@ -1,0 +1,26 @@
+version : '3'
+services: 
+ vprodb:    #name same as in application.properties file
+  image: mohammedbilal98/vprofiledb
+  ports:
+   - "3306:3306"
+  volumes:
+    - vprodbdata:/var/lib/mysql
+    #to local machine: from container volume (can be fetched by cmd docker inspect imagename)
+  environment:
+   - MYSQL_ROOT_PASSWORD=vprodbpass  #password same as imagesfile and app prop file
+
+  vproapp:
+   image: mohammedbilal98/vprofileapp
+   ports: 
+    - "8080:8080"
+   volumes:
+    - vproappdata:/usr/local/tomcat/webapps
+
+ vproweb:
+   image: mohammedbilal98/vprofileweb
+   ports:
+    - "80:80"
+volumes:
+ vprodbdata: {}
+ vproappdata: {}
